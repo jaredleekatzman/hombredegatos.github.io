@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Spanish Irregular Verbs Quiz</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #0056b3;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        #quiz-form {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .question-group {
+            margin-bottom: 30px;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .question {
+            margin-bottom: 12px;
+            font-weight: bold;
+            color: #555;
+            font-size: 16px;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+            padding: 3px 0;
+        }
+
+        .options input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        .fill-blank input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 150px;
+            font-size: 15px;
+        }
+
+        button {
+            display: block;
+            width: 200px;
+            padding: 12px 20px;
+            margin: 30px auto;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .results {
+            margin-top: 30px;
+            border: 1px solid #dcdcdc;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            max-width: 800px;
+            margin: 30px auto;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: none; /* Hidden by default, shown after submission */
+        }
+
+        .score-section, .score-total {
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .score-total {
+            color: #007bff;
+            font-size: 20px;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px dashed #ddd;
+        }
+
+        .feedback {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: red;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .question {
+                font-size: 15px;
+            }
+
+            .options label {
+                font-size: 14px;
+            }
+
+            .fill-blank input[type="text"] {
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            button {
+                width: 100%;
+                font-size: 16px;
+            }
+
+            .results {
+                padding: 15px;
+            }
+
+            .score-section, .score-total {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>New Spanish Irregular Verbs Quiz</h1>
+
+    <form id="quiz-form">
+        <div class="question-group" data-section="1">
+            <h2>Part 1: Easy - Present Tense (Indicative)</h2>
+            <div class="question">1. Yo ______ hambre ahora. (tener)</div>
+            <div class="options">
+                <label><input type="radio" name="q1" value="tengo"> a) tengo</label>
+                <label><input type="radio" name="q1" value="tienes"> b) tienes</label>
+                <label><input type="radio" name="q1" value="tiene"> c) tiene</label>
+                <label><input type="radio" name="q1" value="tenemos"> d) tenemos</label>
+                <div class="feedback" data-correct-val="tengo"></div>
+            </div>
+            <div class="question">2. ¿Tú ______ frío en esta habitación? (sentir - *e to ie*)</div>
+            <div class="options">
+                <label><input type="radio" name="q2" value="siento"> a) siento</label>
+                <label><input type="radio" name="q2" value="sientes"> b) sientes</label>
+                <label><input type="radio" name="q2" value="siente"> c) siente</label>
+                <label><input type="radio" name="q2" value="sentimos"> d) sentimos</label>
+                <div class="feedback" data-correct-val="sientes"></div>
+            </div>
+            <div class="question">3. Nosotros ______ a la playa los sábados. (ir)</div>
+            <div class="options">
+                <label><input type="radio" name="q3" value="voy"> a) voy</label>
+                <label><input type="radio" name="q3" value="vas"> b) vas</label>
+                <label><input type="radio" name="q3" value="va"> c) vamos</label>
+                <label><input type="radio" name="q3" value="van"> d) van</label>
+                <div class="feedback" data-correct-val="vamos"></div>
+            </div>
+            <div class="question">4. Ella ______ la televisión por la noche. (ver)</div>
+            <div class="options">
+                <label><input type="radio" name="q4" value="veo"> a) veo</label>
+                <label><input type="radio" name="q4" value="ves"> b) ves</label>
+                <label><input type="radio" name="q4" value="ve"> c) ve</label>
+                <label><input type="radio" name="q4" value="ven"> d) ven</label>
+                <div class="feedback" data-correct-val="ve"></div>
+            </div>
+            <div class="question">5. Ellos ______ las ventanas cuando llueve. (cerrar - *e to ie*)</div>
+            <div class="options">
+                <label><input type="radio" name="q5" value="cierro"> a) cierro</label>
+                <label><input type="radio" name="q5" value="cierras"> b) cierras</label>
+                <label><input type="radio" name="q5" value="cierra"> c) cierra</label>
+                <label><input type="radio" name="q5" value="cierran"> d) cierran</label>
+                <div class="feedback" data-correct-val="cierran"></div>
+            </div>
+            <div class="question fill-blank">6. Yo _______ <input type="text" name="q6"> (poner) la mesa para la cena.</div>
+            <div class="feedback" data-correct-val="pongo"></div>
+            <div class="question fill-blank">7. Él _______ <input type="text" name="q7"> (volver - *o to ue*) a casa tarde.</div>
+            <div class="feedback" data-correct-val="vuelve"></div>
+            <div class="question fill-blank">8. Nosotros _______ <input type="text" name="q8"> (pedir - *e to i*) ayuda si la necesitamos.</div>
+            <div class="feedback" data-correct-val="pedimos"></div>
+            <div class="question fill-blank">9. Tú _______ <input type="text" name="q9"> (oír) música a menudo.</div>
+            <div class="feedback" data-correct-val="oyes"></div>
+            <div class="question fill-blank">10. Ustedes _______ <input type="text" name="q10"> (empezar - *e to ie*) la clase a las ocho.</div>
+            <div class="feedback" data-correct-val="empiezan"></div>
+        </div>
+
+        <div class="question-group" data-section="2">
+            <h2>Part 2: Medium - Preterite Tense (Indicative)</h2>
+            <div class="question">11. Ayer, yo ______ una carta a mi amigo. (escribir)</div>
+            <div class="options">
+                <label><input type="radio" name="q11" value="escribí"> a) escribí</label>
+                <label><input type="radio" name="q11" value="escribiste"> b) escribiste</label>
+                <label><input type="radio" name="q11" value="escribió"> c) escribió</label>
+                <label><input type="radio" name="q11" value="escribimos"> d) escribimos</label>
+                <div class="feedback" data-correct-val="escribí"></div>
+            </div>
+            <div class="question">12. Nosotros ______ una película interesante anoche. (ver)</div>
+            <div class="options">
+                <label><input type="radio" name="q12" value="vi"> a) vi</label>
+                <label><input type="radio" name="q12" value="viste"> b) viste</label>
+                <label><input type="radio" name="q12" value="vio"> c) vimos</label>
+                <label><input type="radio" name="q12" value="vieron"> d) vieron</label>
+                <div class="feedback" data-correct-val="vimos"></div>
+            </div>
+            <div class="question">13. ¿Tú ______ al concierto el mes pasado? (ir)</div>
+            <div class="options">
+                <label><input type="radio" name="q13" value="fui"> a) fui</label>
+                <label><input type="radio" name="q13" value="fuiste"> b) fuiste</label>
+                <label><input type="radio" name="q13" value="fue"> c) fue</label>
+                <label><input type="radio" name="q13" value="fueron"> d) fueron</label>
+                <div class="feedback" data-correct-val="fuiste"></div>
+            </div>
+            <div class="question">14. Él ______ la verdad, pero nadie le creyó. (decir)</div>
+            <div class="options">
+                <label><input type="radio" name="q14" value="dije"> a) dije</label>
+                <label><input type="radio" name="q14" value="dijiste"> b) dijiste</label>
+                <label><input type="radio" name="q14" value="dijo"> c) dijo</label>
+                <label><input type="radio" name="q14" value="dijeron"> d) dijeron</label>
+                <div class="feedback" data-correct-val="dijo"></div>
+            </div>
+            <div class="question">15. Ellos ______ que estudiar mucho para el examen. (tener)</div>
+            <div class="options">
+                <label><input type="radio" name="q15" value="tuve"> a) tuve</label>
+                <label><input type="radio" name="q15" value="tuviste"> b) tuviste</label>
+                <label><input type="radio" name="q15" value="tuvo"> c) tuvo</label>
+                <label><input type="radio" name="q15" value="tuvieron"> d) tuvieron</label>
+                <div class="feedback" data-correct-val="tuvieron"></div>
+            </div>
+            <div class="question fill-blank">16. Nosotros _______ <input type="text" name="q16"> (estar) muy contentos con los resultados.</div>
+            <div class="feedback" data-correct-val="estuvimos"></div>
+            <div class="question fill-blank">17. Ella _______ <input type="text" name="q17"> (hacer) un pastel delicioso para la fiesta.</div>
+            <div class="feedback" data-correct-val="hizo"></div>
+            <div class="question fill-blank">18. Yo _______ <input type="text" name="q18"> (poder) ayudarte ayer por la tarde.</div>
+            <div class="feedback" data-correct-val="pude"></div>
+            <div class="question fill-blank">19. Tú _______ <input type="text" name="q19"> (venir) a mi casa sin avisar.</div>
+            <div class="feedback" data-correct-val="viniste"></div>
+            <div class="question fill-blank">20. Los niños _______ <input type="text" name="q20"> (poner) sus juguetes en la caja.</div>
+            <div class="feedback" data-correct-val="pusieron"></div>
+        </div>
+
+        <div class="question-group" data-section="3">
+            <h2>Part 3: Medium-Advanced - Imperfect Tense (Indicative) and Preterite vs. Imperfect</h2>
+            <div class="question">21. Cuando era joven, yo ______ mucho al fútbol. (jugar - *u to ue* - imperfect doesn't change stem)</div>
+            <div class="options">
+                <label><input type="radio" name="q21" value="jugué"> a) jugué</label>
+                <label><input type="radio" name="q21" value="jugaba"> b) jugaba</label>
+                <label><input type="radio" name="q21" value="jugaste"> c) jugaste</label>
+                <label><input type="radio" name="q21" value="jugábamos"> d) jugábamos</label>
+                <div class="feedback" data-correct-val="jugaba"></div>
+            </div>
+            <div class="question">22. Mientras nosotros ______ la cena, nuestros amigos ______. (preparar, llegar)</div>
+            <div class="options">
+                <label><input type="radio" name="q22" value="preparábamos,llegaron"> a) preparábamos, llegaron</label>
+                <label><input type="radio" name="q22" value="preparamos,llegaban"> b) preparamos, llegaban</label>
+                <label><input type="radio" name="q22" value="preparábamos,llegaban"> c) preparábamos, llegaban</label>
+                <label><input type="radio" name="q22" value="preparamos,llegaron"> d) preparamos, llegaron</label>
+                <div class="feedback" data-correct-val="preparábamos,llegaron"></div>
+            </div>
+            <div class="question">23. De repente, ella ______ un ruido extraño. (oír)</div>
+            <div class="options">
+                <label><input type="radio" name="q23" value="oía"> a) oía</label>
+                <label><input type="radio" name="q23" value="oyó"> b) oyó</label>
+                <label><input type="radio" name="q23" value="oíste"> c) oíste</label>
+                <label><input type="radio" name="q23" value="oímos"> d) oímos</label>
+                <div class="feedback" data-correct-val="oyó"></div>
+            </div>
+            <div class="question">24. Antes, mi familia y yo ______ mucho a la iglesia. (ir)</div>
+            <div class="options">
+                <label><input type="radio" name="q24" value="fui"> a) fui</label>
+                <label><input type="radio" name="q24" value="íbamos"> b) íbamos</label>
+                <label><input type="radio" name="q24" value="fue"> c) fue</label>
+                <label><input type="radio" name="q24" value="iban"> d) iban</label>
+                <div class="feedback" data-correct-val="íbamos"></div>
+            </div>
+            <div class="question">25. Él ______ muy alto cuando era niño. (crecer)</div>
+            <div class="options">
+                <label><input type="radio" name="q25" value="crecí"> a) crecí</label>
+                <label><input type="radio" name="q25" value="crecía"> b) crecía</label>
+                <label><input type="radio" name="q25" value="creciste"> c) creciste</label>
+                <label><input type="radio" name="q25" value="crecíamos"> d) crecíamos</label>
+                <div class="feedback" data-correct-val="crecía"></div>
+            </div>
+            <div class="question fill-blank">26. La película _______ <input type="text" name="q26"> (ser) muy larga. (description)</div>
+            <div class="feedback" data-correct-val="era"></div>
+            <div class="question fill-blank">27. De repente, yo _______ <input type="text" name="q27"> (saber) la respuesta. (*to find out*)</div>
+            <div class="feedback" data-correct-val="supe"></div>
+            <div class="question fill-blank">28. Mientras tú _______ <input type="text" name="q28_1"> (leer), yo _______ <input type="text" name="q28_2"> (escribir) un correo electrónico.</div>
+            <div class="feedback" data-correct-val="leías,escribía"></div>
+            <div class="question fill-blank">29. Anoche, ellos _______ <input type="text" name="q29"> (dormir - *o to ue*) muy tarde.</div>
+            <div class="feedback" data-correct-val="durmieron"></div>
+            <div class="question fill-blank">30. Cuando nosotros _______ <input type="text" name="q30_1"> (llegar), la fiesta ya _______ <input type="text" name="q30_2"> (empezar - *e to ie*).</div>
+            <div class="feedback" data-correct-val="llegamos,había empezado"></div>
+        </div>
+
+        <div class="question-group" data-section="4">
+            <h2>Part 4: Advanced - Subjunctive Mood (Present & Past), Commands, and Other Complex Forms</h2>
+            <div class="question">31. Es necesario que él ______ más despacio. (hablar)</div>
+            <div class="options">
+                <label><input type="radio" name="q31" value="habla"> a) habla</label>
+                <label><input type="radio" name="q31" value="hable"> b) hable</label>
+                <label><input type="radio" name="q31" value="habló"> c) habló</label>
+                <label><input type="radio" name="q31" value="hablara"> d) hablara</label>
+                <div class="feedback" data-correct-val="hable"></div>
+            </div>
+            <div class="question">32. No creo que ellos ______ tiempo para visitar el museo. (tener)</div>
+            <div class="options">
+                <label><input type="radio" name="q32" value="tienen"> a) tienen</label>
+                <label><input type="radio" name="q32" value="tengan"> b) tengan</label>
+                <label><input type="radio" name="q32" value="tuvieron"> c) tuvieron</label>
+                <label><input type="radio" name="q32" value="tendrían"> d) tendrían</label>
+                <div class="feedback" data-correct-val="tengan"></div>
+            </div>
+            <div class="question">33. Si yo ______ más valiente, ______ paracaidismo. (ser, hacer)</div>
+            <div class="options">
+                <label><input type="radio" name="q33" value="era,haría"> a) era, haría</label>
+                <label><input type="radio" name="q33" value="fuera,haría"> b) fuera, haría</label>
+                <label><input type="radio" name="q33" value="soy,haré"> c) soy, haré</label>
+                <label><input type="radio" name="q33" value="fui,hice"> d) fui, hice</label>
+                <div class="feedback" data-correct-val="fuera,haría"></div>
+            </div>
+            <div class="question">34. ______ (tú) cuidado al cruzar la calle. (tener - affirmative command)</div>
+            <div class="options">
+                <label><input type="radio" name="q34" value="Tienes"> a) Tienes</label>
+                <label><input type="radio" name="q34" value="Ten"> b) Ten</label>
+                <label><input type="radio" name="q34" value="Tenga"> c) Tenga</label>
+                <label><input type="radio" name="q34" value="Tendrás"> d) Tendrás</label>
+                <div class="feedback" data-correct-val="Ten"></div>
+            </div>
+            <div class="question">35. Era importante que nosotros ______ a tiempo. (llegar)</div>
+            <div class="options">
+                <label><input type="radio" name="q35" value="llegamos"> a) llegamos</label>
+                <label><input type="radio" name="q35" value="llegáramos"> b) llegáramos</label>
+                <label><input type="radio" name="q35" value="lleguemos"> c) lleguemos</label>
+                <label><input type="radio" name="q35" value="llegaríamos"> d) llegaríamos</label>
+                <div class="feedback" data-correct-val="llegáramos"></div>
+            </div>
+            <div class="question fill-blank">36. Es posible que ellos _______ <input type="text" name="q36"> (venir) mañana. (present subjunctive)</div>
+            <div class="feedback" data-correct-val="vengan"></div>
+            <div class="question fill-blank">37. Si tú _______ <input type="text" name="q37"> (ir) a la fiesta, yo también iría. (imperfect subjunctive)</div>
+            <div class="feedback" data-correct-val="fueras"></div>
+            <div class="question fill-blank">38. No _______ <input type="text" name="q38"> (ustedes - decir) nada. (negative command)</div>
+            <div class="feedback" data-correct-val="digan"></div>
+            <div class="question fill-blank">39. Ojalá que yo _______ <input type="text" name="q39"> (poder) viajar más. (imperfect subjunctive)</div>
+            <div class="feedback" data-correct-val="pudiera"></div>
+            <div class="question fill-blank">40. Quiero que tú _______ <input type="text" name="q40"> (ser) feliz. (present subjunctive)</div>
+            <div class="feedback" data-correct-val="seas"></div>
+        </div>
+
+        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+    </form>
+
+    <div id="results">
+        <h2>Results</h2>
+        <div id="score-part1" class="score-section"></div>
+        <div id="score-part2" class="score-section"></div>
+        <div id="score-part3" class="score-section"></div>
+        <div id="score-part4" class="score-section"></div>
+        <div id="score-total" class="score-total"></div>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            const form = document.getElementById('quiz-form');
+            const resultsDiv = document.getElementById('results');
+            const feedbackDivs = document.querySelectorAll('.feedback');
+
+            let scores = {
+                1: 0,
+                2: 0,
+                3: 0,
+                4: 0,
+                total: 0
+            };
+            let questionCounts = {
+                1: 0,
+                2: 0,
+                3: 0,
+                4: 0,
+                total: 0
+            };
+
+            // Reset previous feedback and scores
+            feedbackDivs.forEach(div => {
+                div.innerHTML = '';
+                div.classList.remove('correct', 'incorrect');
+            });
+
+            document.querySelectorAll('.options input[type="radio"]').forEach(radio => {
+                radio.closest('label').classList.remove('correct', 'incorrect');
+            });
+            document.querySelectorAll('.fill-blank input[type="text"]').forEach(input => {
+                input.classList.remove('correct', 'incorrect');
+            });
+
+            feedbackDivs.forEach(feedbackDiv => {
+                const correctAnswer = feedbackDiv.dataset.correctVal.toLowerCase().trim();
+                const parentQuestionDiv = feedbackDiv.closest('.question');
+                const questionGroup = feedbackDiv.closest('.question-group');
+                const section = parseInt(questionGroup.dataset.section);
+
+                questionCounts[section]++;
+                questionCounts.total++;
+
+                let isCorrect = false;
+                let userAnswer = '';
+
+                // Handle Multiple Choice Questions
+                const radioInput = parentQuestionDiv ? parentQuestionDiv.querySelector(`input[name="${feedbackDiv.previousElementSibling.querySelector('input, div').name}"]:checked`) : null;
+
+                if (radioInput) {
+                    userAnswer = radioInput.value.toLowerCase().trim();
+                    if (userAnswer === correctAnswer) {
+                        isCorrect = true;
+                    }
+                    radioInput.closest('label').classList.add(isCorrect ? 'correct' : 'incorrect');
+                } else {
+                    // Handle Fill-in-the-Blank Questions
+                    const singleTextInput = feedbackDiv.previousElementSibling.querySelector('input[type="text"]');
+                    if (singleTextInput && singleTextInput.name === feedbackDiv.previousElementSibling.querySelector('input, div').name) {
+                        userAnswer = singleTextInput.value.toLowerCase().trim();
+                        if (userAnswer === correctAnswer) {
+                            isCorrect = true;
+                        }
+                        singleTextInput.classList.add(isCorrect ? 'correct' : 'incorrect');
+                    } else {
+                        // Handle multiple fill-in-blanks
+                        const inputs = Array.from(feedbackDiv.previousElementSibling.querySelectorAll('input[type="text"]'));
+                        if (inputs.length > 0) {
+                            const correctParts = correctAnswer.split(',');
+                            const userParts = inputs.map(input => input.value.toLowerCase().trim());
+
+                            // Check if the number of parts matches and all parts are correct
+                            if (userParts.length === correctParts.length && userParts.every((part, index) => part === correctParts[index])) {
+                                isCorrect = true;
+                                inputs.forEach(input => input.classList.add('correct'));
+                            } else {
+                                // Apply individual feedback for multiple blanks
+                                inputs.forEach((input, index) => {
+                                    if (index < correctParts.length && input.value.toLowerCase().trim() === correctParts[index]) {
+                                        input.classList.add('correct');
+                                    } else {
+                                        input.classList.add('incorrect');
+                                    }
+                                });
+                            }
+                            userAnswer = userParts.join(',');
+                        }
+                    }
+                }
+
+                if (isCorrect) {
+                    scores[section]++;
+                    scores.total++;
+                    feedbackDiv.classList.add('correct');
+                    feedbackDiv.innerHTML = `Correct! The answer is: <span class="correct">${correctAnswer.toUpperCase()}</span>`;
+                } else {
+                    feedbackDiv.classList.add('incorrect');
+                    feedbackDiv.innerHTML = `Incorrect. The correct answer is: <span class="correct">${correctAnswer.toUpperCase()}</span>`;
+                    if (userAnswer) {
+                        feedbackDiv.innerHTML += ` (Your answer: ${userAnswer.toUpperCase()})`;
+                    }
+                }
+            });
+
+            // Display results
+            document.getElementById('score-part1').innerText = `Part 1 Score: ${scores[1]} / ${questionCounts[1]}`;
+            document.getElementById('score-part2').innerText = `Part 2 Score: ${scores[2]} / ${questionCounts[2]}`;
+            document.getElementById('score-part3').innerText = `Part 3 Score: ${scores[3]} / ${questionCounts[3]}`;
+            document.getElementById('score-part4').innerText = `Part 4 Score: ${scores[4]} / ${questionCounts[4]}`;
+            document.getElementById('score-total').innerText = `Total Score: ${scores.total} / ${questionCounts.total}`;
+            resultsDiv.style.display = 'block';
+
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
