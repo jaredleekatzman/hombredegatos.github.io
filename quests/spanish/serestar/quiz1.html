@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spanish Grammar Quiz: Ser vs. Estar</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #0056b3;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        #quiz-form {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .question-group {
+            margin-bottom: 30px;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .question {
+            margin-bottom: 12px;
+            font-weight: bold;
+            color: #555;
+            font-size: 16px;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+            padding: 3px 0;
+        }
+
+        .options input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        button {
+            display: block;
+            width: 200px;
+            padding: 12px 20px;
+            margin: 30px auto;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .results {
+            margin-top: 30px;
+            border: 1px solid #dcdcdc;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            max-width: 800px;
+            margin: 30px auto;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: none; /* Hidden by default, shown after submission */
+        }
+
+        .score-section, .score-total {
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .score-total {
+            color: #007bff;
+            font-size: 20px;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px dashed #ddd;
+        }
+
+        .feedback {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: red;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .question {
+                font-size: 15px;
+            }
+
+            .options label {
+                font-size: 14px;
+            }
+
+            button {
+                width: 100%;
+                font-size: 16px;
+            }
+
+            .results {
+                padding: 15px;
+            }
+
+            .score-section, .score-total {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Spanish Grammar Quiz: Ser vs. Estar</h1>
+
+    <form id="quiz-form">
+        <div class="question-group" data-section="1">
+            <h2>Part 1: Easy - Present Tense</h2>
+            <div class="question">1. Mi padre ______ médico.</div>
+            <div class="options">
+                <label><input type="radio" name="q1" value="es"> a) es</label>
+                <label><input type="radio" name="q1" value="está"> b) está</label>
+                <div class="feedback" data-correct-val="es"></div>
+            </div>
+            <div class="question">2. Yo ______ en la escuela.</div>
+            <div class="options">
+                <label><input type="radio" name="q2" value="soy"> a) soy</label>
+                <label><input type="radio" name="q2" value="estoy"> b) estoy</label>
+                <div class="feedback" data-correct-val="estoy"></div>
+            </div>
+            <div class="question">3. La puerta ______ cerrada.</div>
+            <div class="options">
+                <label><input type="radio" name="q3" value="es"> a) es</label>
+                <label><input type="radio" name="q3" value="está"> b) está</label>
+                <div class="feedback" data-correct-val="está"></div>
+            </div>
+            <div class="question">4. Nosotros ______ amigos.</div>
+            <div class="options">
+                <label><input type="radio" name="q4" value="somos"> a) somos</label>
+                <label><input type="radio" name="q4" value="estamos"> b) estamos</label>
+                <div class="feedback" data-correct-val="somos"></div>
+            </div>
+            <div class="question">5. El libro ______ de papel.</div>
+            <div class="options">
+                <label><input type="radio" name="q5" value="es"> a) es</label>
+                <label><input type="radio" name="q5" value="está"> b) está</label>
+                <div class="feedback" data-correct-val="es"></div>
+            </div>
+            <div class="question">6. ¿Cómo ______ tú hoy?</div>
+            <div class="options">
+                <label><input type="radio" name="q6" value="eres"> a) eres</label>
+                <label><input type="radio" name="q6" value="estás"> b) estás</label>
+                <div class="feedback" data-correct-val="estás"></div>
+            </div>
+            <div class="question">7. La clase ______ a las diez.</div>
+            <div class="options">
+                <label><input type="radio" name="q7" value="es"> a) es</label>
+                <label><input type="radio" name="q7" value="está"> b) está</label>
+                <div class="feedback" data-correct-val="es"></div>
+            </div>
+            <div class="question">8. Ella ______ muy inteligente.</div>
+            <div class="options">
+                <label><input type="radio" name="q8" value="es"> a) es</label>
+                <label><input type="radio" name="q8" value="está"> b) está</label>
+                <div class="feedback" data-correct-val="es"></div>
+            </div>
+            <div class="question">9. Los niños ______ cansados.</div>
+            <div class="options">
+                <label><input type="radio" name="q9" value="son"> a) son</label>
+                <label><input type="radio" name="q9" value="están"> b) están</label>
+                <div class="feedback" data-correct-val="están"></div>
+            </div>
+            <div class="question">10. Yo ______ de España.</div>
+            <div class="options">
+                <label><input type="radio" name="q10" value="soy"> a) soy</label>
+                <label><input type="radio" name="q10" value="estoy"> b) estoy</label>
+                <div class="feedback" data-correct-val="soy"></div>
+            </div>
+        </div>
+
+        <div class="question-group" data-section="2">
+            <h2>Part 2: Medium - Past Tenses (Preterite & Imperfect)</h2>
+            <div class="question">11. Ayer, la fiesta ______ en mi casa.</div>
+            <div class="options">
+                <label><input type="radio" name="q11" value="fue"> a) fue</label>
+                <label><input type="radio" name="q11" value="estuvo"> b) estuvo</label>
+                <div class="feedback" data-correct-val="fue"></div>
+            </div>
+            <div class="question">12. Cuando era joven, yo ______ muy tímido.</div>
+            <div class="options">
+                <label><input type="radio" name="q12" value="fui"> a) fui</label>
+                <label><input type="radio" name="q12" value="era"> b) era</label>
+                <div class="feedback" data-correct-val="era"></div>
+            </div>
+            <div class="question">13. La comida ______ fría cuando la servimos.</div>
+            <div class="options">
+                <label><input type="radio" name="q13" value="fue"> a) fue</label>
+                <label><input type="radio" name="q13" value="estaba"> b) estaba</label>
+                <div class="feedback" data-correct-val="estaba"></div>
+            </div>
+            <div class="question">14. Antes, nosotros ______ estudiantes universitarios.</div>
+            <div class="options">
+                <label><input type="radio" name="q14" value="fuimos"> a) fuimos</label>
+                <label><input type="radio" name="q14" value="éramos"> b) éramos</label>
+                <div class="feedback" data-correct-val="éramos"></div>
+            </div>
+            <div class="question">15. ¿Dónde ______ tus padres cuando ocurrió el accidente?</div>
+            <div class="options">
+                <label><input type="radio" name="q15" value="fueron"> a) fueron</label>
+                <label><input type="radio" name="q15" value="estaban"> b) estaban</label>
+                <div class="feedback" data-correct-val="estaban"></div>
+            </div>
+            <div class="question">16. La reunión ______ muy interesante.</div>
+            <div class="options">
+                <label><input type="radio" name="q16" value="fue"> a) fue</label>
+                <label><input type="radio" name="q16" value="estuvo"> b) estuvo</label>
+                <div class="feedback" data-correct-val="fue"></div>
+            </div>
+            <div class="question">17. Él ______ enfermo por una semana.</div>
+            <div class="options">
+                <label><input type="radio" name="q17" value="fue"> a) fue</label>
+                <label><input type="radio" name="q17" value="estuvo"> b) estuvo</label>
+                <div class="feedback" data-correct-val="estuvo"></div>
+            </div>
+            <div class="question">18. La casa ______ azul cuando la compraron.</div>
+            <div class="options">
+                <label><input type="radio" name="q18" value="fue"> a) fue</label>
+                <label><input type="radio" name="q18" value="era"> b) era</label>
+                <div class="feedback" data-correct-val="era"></div>
+            </div>
+            <div class="question">19. Yo ______ feliz de verte anoche.</div>
+            <div class="options">
+                <label><input type="radio" name="q19" value="fui"> a) fui</label>
+                <label><input type="radio" name="q19" value="estuve"> b) estuve</label>
+                <div class="feedback" data-correct-val="estuve"></div>
+            </div>
+            <div class="question">20. Los libros ______ en la mesa todo el día.</div>
+            <div class="options">
+                <label><input type="radio" name="q20" value="fueron"> a) fueron</label>
+                <label><input type="radio" name="q20" value="estuvieron"> b) estuvieron</label>
+                <div class="feedback" data-correct-val="estuvieron"></div>
+            </div>
+        </div>
+
+        <div class="question-group" data-section="3">
+            <h2>Part 3: Medium-Advanced - Future, Conditional & Perfect Tenses</h2>
+            <div class="question">21. Mañana ______ un día soleado.</div>
+            <div class="options">
+                <label><input type="radio" name="q21" value="será"> a) será</label>
+                <label><input type="radio" name="q21" value="estará"> b) estará</label>
+                <div class="feedback" data-correct-val="estará"></div>
+            </div>
+            <div class="question">22. Si tuviera tiempo, ______ contigo.</div>
+            <div class="options">
+                <label><input type="radio" name="q22" value="sería"> a) sería</label>
+                <label><input type="radio" name="q22" value="estaría"> b) estaría</label>
+                <div class="feedback" data-correct-val="estaría"></div>
+            </div>
+            <div class="question">23. Él siempre ______ muy amable.</div>
+            <div class="options">
+                <label><input type="radio" name="q23" value="ha sido"> a) ha sido</label>
+                <label><input type="radio" name="q23" value="ha estado"> b) ha estado</label>
+                <div class="feedback" data-correct-val="ha sido"></div>
+            </div>
+            <div class="question">24. Ella me dijo que ______ nerviosa antes del examen.</div>
+            <div class="options">
+                <label><input type="radio" name="q24" value="sería"> a) sería</label>
+                <label><input type="radio" name="q24" value="estaría"> b) estaría</label>
+                <div class="feedback" data-correct-val="estaría"></div>
+            </div>
+            <div class="question">25. Los resultados del estudio ______ importantes para la ciencia.</div>
+            <div class="options">
+                <label><input type="radio" name="q25" value="serán"> a) serán</label>
+                <label><input type="radio" name="q25" value="estarán"> b) estarán</label>
+                <div class="feedback" data-correct-val="serán"></div>
+            </div>
+            <div class="question">26. ¿Crees que la tienda ______ abierta el domingo?</div>
+            <div class="options">
+                <label><input type="radio" name="q26" value="será"> a) será</label>
+                <label><input type="radio" name="q26" value="estará"> b) estará</label>
+                <div class="feedback" data-correct-val="estará"></div>
+            </div>
+            <div class="question">27. Siempre ______ un placer ayudarte.</div>
+            <div class="options">
+                <label><input type="radio" name="q27" value="será"> a) será</label>
+                <label><input type="radio" name="q27" value="estará"> b) estará</label>
+                <div class="feedback" data-correct-val="será"></div>
+            </div>
+            <div class="question">28. Si hubiéramos sabido, no ______ allí.</div>
+            <div class="options">
+                <label><input type="radio" name="q28" value="habríamos sido"> a) habríamos sido</label>
+                <label><input type="radio" name="q28" value="habríamos estado"> b) habríamos estado</label>
+                <div class="feedback" data-correct-val="habríamos estado"></div>
+            </div>
+            <div class="question">29. Él ______ trabajando toda la mañana.</div>
+            <div class="options">
+                <label><input type="radio" name="q29" value="ha sido"> a) ha sido</label>
+                <label><input type="radio" name="q29" value="ha estado"> b) ha estado</label>
+                <div class="feedback" data-correct-val="ha estado"></div>
+            </div>
+            <div class="question">30. La reunión ______ mañana por la tarde.</div>
+            <div class="options">
+                <label><input type="radio" name="q30" value="será"> a) será</label>
+                <label><input type="radio" name="q30" value="estará"> b) estará</label>
+                <div class="feedback" data-correct-val="será"></div>
+            </div>
+        </div>
+
+        <div class="question-group" data-section="4">
+            <h2>Part 4: Advanced - Subjunctive & Specific Meanings</h2>
+            <div class="question">31. Es importante que tú ______ listo para el viaje.</div>
+            <div class="options">
+                <label><input type="radio" name="q31" value="seas"> a) seas</label>
+                <label><input type="radio" name="q31" value="estés"> b) estés</label>
+                <div class="feedback" data-correct-val="estés"></div>
+            </div>
+            <div class="question">32. Aunque él ______ pobre, ______ feliz.</div>
+            <div class="options">
+                <label><input type="radio" name="q32" value="sea,está"> a) sea, está</label>
+                <label><input type="radio" name="q32" value="esté,es"> b) esté, es</label>
+                <div class="feedback" data-correct-val="sea,está"></div>
+            </div>
+            <div class="question">33. Es bueno que nosotros ______ aquí ahora.</div>
+            <div class="options">
+                <label><input type="radio" name="q33" value="seamos"> a) seamos</label>
+                <label><input type="radio" name="q33" value="estemos"> b) estemos</label>
+                <div class="feedback" data-correct-val="estemos"></div>
+            </div>
+            <div class="question">34. No creo que el problema ______ grave.</div>
+            <div class="options">
+                <label><input type="radio" name="q34" value="sea"> a) sea</label>
+                <label><input type="radio" name="q34" value="esté"> b) esté</label>
+                <div class="feedback" data-correct-val="sea"></div>
+            </div>
+            <div class="question">35. Me alegra que el trabajo ______ terminado.</div>
+            <div class="options">
+                <label><input type="radio" name="q35" value="sea"> a) sea</label>
+                <label><input type="radio" name="q35" value="esté"> b) esté</label>
+                <div class="feedback" data-correct-val="esté"></div>
+            </div>
+            <div class="question">36. La manzana ______ verde. (color)</div>
+            <div class="options">
+                <label><input type="radio" name="q36" value="es"> a) es</label>
+                <label><input type="radio" name="q36" value="está"> b) está</label>
+                <div class="feedback" data-correct-val="es"></div>
+            </div>
+            <div class="question">37. La manzana ______ verde. (not ripe)</div>
+            <div class="options">
+                <label><input type="radio" name="q37" value="es"> a) es</label>
+                <label><input type="radio" name="q37" value="está"> b) está</label>
+                <div class="feedback" data-correct-val="está"></div>
+            </div>
+            <div class="question">38. Él ______ aburrido (boring).</div>
+            <div class="options">
+                <label><input type="radio" name="q38" value="es"> a) es</label>
+                <label><input type="radio" name="q38" value="está"> b) está</label>
+                <div class="feedback" data-correct-val="es"></div>
+            </div>
+            <div class="question">39. Él ______ aburrido (bored).</div>
+            <div class="options">
+                <label><input type="radio" name="q39" value="es"> a) es</label>
+                <label><input type="radio" name="q39" value="está"> b) está</label>
+                <div class="feedback" data-correct-val="está"></div>
+            </div>
+            <div class="question">40. Ella insiste en que todo ______ perfecto.</div>
+            <div class="options">
+                <label><input type="radio" name="q40" value="sea"> a) sea</label>
+                <label><input type="radio" name="q40" value="esté"> b) esté</label>
+                <div class="feedback" data-correct-val="esté"></div>
+            </div>
+        </div>
+
+        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+    </form>
+
+    <div id="results">
+        <h2>Results</h2>
+        <div id="score-part1" class="score-section"></div>
+        <div id="score-part2" class="score-section"></div>
+        <div id="score-part3" class="score-section"></div>
+        <div id="score-part4" class="score-section"></div>
+        <div id="score-total" class="score-total"></div>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            const form = document.getElementById('quiz-form');
+            const resultsDiv = document.getElementById('results');
+            const feedbackDivs = document.querySelectorAll('.feedback');
+
+            let scores = {
+                1: 0,
+                2: 0,
+                3: 0,
+                4: 0,
+                total: 0
+            };
+            let questionCounts = {
+                1: 0,
+                2: 0,
+                3: 0,
+                4: 0,
+                total: 0
+            };
+
+            // Reset previous feedback and scores
+            feedbackDivs.forEach(div => {
+                div.innerHTML = '';
+                div.classList.remove('correct', 'incorrect');
+            });
+
+            document.querySelectorAll('.options input[type="radio"]').forEach(radio => {
+                radio.closest('label').classList.remove('correct', 'incorrect');
+            });
+
+            feedbackDivs.forEach(feedbackDiv => {
+                const correctAnswer = feedbackDiv.dataset.correctVal.toLowerCase().trim();
+                const parentQuestionDiv = feedbackDiv.closest('.question');
+                const questionGroup = feedbackDiv.closest('.question-group');
+                const section = parseInt(questionGroup.dataset.section);
+
+                questionCounts[section]++;
+                questionCounts.total++;
+
+                let isCorrect = false;
+                let userAnswer = '';
+
+                // Handle Multiple Choice Questions
+                const radioInput = parentQuestionDiv ? parentQuestionDiv.querySelector(`input[name="q${parentQuestionDiv.innerText.split('.')[0]}"]:checked`) : null;
+
+                if (radioInput) {
+                    userAnswer = radioInput.value.toLowerCase().trim();
+                    if (userAnswer === correctAnswer) {
+                        isCorrect = true;
+                    }
+                    radioInput.closest('label').classList.add(isCorrect ? 'correct' : 'incorrect');
+                } else {
+                    // This block should ideally not be hit for a pure multiple-choice quiz
+                    // However, if there were any fill-in-the-blank questions (e.g. from copy-paste error), this would handle it.
+                    console.warn("Unexpected non-radio input found in Ser vs. Estar quiz logic.");
+                }
+
+                if (isCorrect) {
+                    scores[section]++;
+                    scores.total++;
+                    feedbackDiv.classList.add('correct');
+                    feedbackDiv.innerHTML = `Correct! The answer is: <span class="correct">${correctAnswer.toUpperCase()}</span>`;
+                } else {
+                    feedbackDiv.classList.add('incorrect');
+                    feedbackDiv.innerHTML = `Incorrect. The correct answer is: <span class="correct">${correctAnswer.toUpperCase()}</span>`;
+                    if (userAnswer) {
+                        feedbackDiv.innerHTML += ` (Your answer: ${userAnswer.toUpperCase()})`;
+                    }
+                }
+            });
+
+            // Display results
+            document.getElementById('score-part1').innerText = `Part 1 Score: ${scores[1]} / ${questionCounts[1]}`;
+            document.getElementById('score-part2').innerText = `Part 2 Score: ${scores[2]} / ${questionCounts[2]}`;
+            document.getElementById('score-part3').innerText = `Part 3 Score: ${scores[3]} / ${questionCounts[3]}`;
+            document.getElementById('score-part4').innerText = `Part 4 Score: ${scores[4]} / ${questionCounts[4]}`;
+            document.getElementById('score-total').innerText = `Total Score: ${scores.total} / ${questionCounts.total}`;
+            resultsDiv.style.display = 'block';
+
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

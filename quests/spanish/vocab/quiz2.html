@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spanish Vocabulary Placement Quiz 2</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #0056b3;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        #quiz-form {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .question-group {
+            margin-bottom: 30px;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .question {
+            margin-bottom: 12px;
+            font-weight: bold;
+            color: #555;
+            font-size: 16px;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+            padding: 3px 0;
+        }
+
+        .options input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        button {
+            display: block;
+            width: 200px;
+            padding: 12px 20px;
+            margin: 30px auto;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .results {
+            margin-top: 30px;
+            border: 1px solid #dcdcdc;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            max-width: 800px;
+            margin: 30px auto;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: none; /* Hidden by default, shown after submission */
+        }
+
+        .score-section, .score-total {
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .score-total {
+            color: #007bff;
+            font-size: 20px;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px dashed #ddd;
+        }
+
+        .feedback {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: red;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .question {
+                font-size: 15px;
+            }
+
+            .options label {
+                font-size: 14px;
+            }
+
+            button {
+                width: 100%;
+                font-size: 16px;
+            }
+
+            .results {
+                padding: 15px;
+            }
+
+            .score-section, .score-total {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Spanish Vocabulary Placement Quiz 2</h1>
+    <p>Choose the best Spanish word or phrase to complete each sentence or answer the question.</p>
+
+    <form id="quiz-form">
+        <div class="question-group" data-section="1">
+            <h2>Part 1: Beginner Vocabulary</h2>
+            <div class="question">1. ¿Qué se usa para escribir?</div>
+            <div class="options">
+                <label><input type="radio" name="q1" value="mesa"> a) mesa</label>
+                <label><input type="radio" name="q1" value="silla"> b) silla</label>
+                <label><input type="radio" name="q1" value="lápiz"> c) lápiz</label>
+                <label><input type="radio" name="q1" value="cama"> d) cama</label>
+                <div class="feedback" data-correct-val="lápiz"></div>
+            </div>
+            <div class="question">2. La hermana de tu padre es tu ______.</div>
+            <div class="options">
+                <label><input type="radio" name="q2" value="madre"> a) madre</label>
+                <label><input type="radio" name="q2" value="tía"> b) tía</label>
+                <label><input type="radio" name="q2" value="prima"> c) prima</label>
+                <label><input type="radio" name="q2" value="abuela"> d) abuela</label>
+                <div class="feedback" data-correct-val="tía"></div>
+            </div>
+            <div class="question">3. ¿Cuál de estos es una bebida?</div>
+            <div class="options">
+                <label><input type="radio" name="q3" value="pan"> a) pan</label>
+                <label><input type="radio" name="q3" value="queso"> b) queso</label>
+                <label><input type="radio" name="q3" value="leche"> c) leche</label>
+                <label><input type="radio" name="q3" value="carne"> d) carne</label>
+                <div class="feedback" data-correct-val="leche"></div>
+            </div>
+            <div class="question">4. El opuesto de "frío" es ______.</div>
+            <div class="options">
+                <label><input type="radio" name="q4" value="caliente"> a) caliente</label>
+                <label><input type="radio" name="q4" value="mojado"> b) mojado</label>
+                <label><input type="radio" name="q4" value="seco"> c) seco</label>
+                <label><input type="radio" name="q4" value="dulce"> d) dulce</label>
+                <div class="feedback" data-correct-val="caliente"></div>
+            </div>
+            <div class="question">5. ¿Qué haces con los ojos?</div>
+            <div class="options">
+                <label><input type="radio" name="q5" value="hablar"> a) hablar</label>
+                <label><input type="radio" name="q5" value="comer"> b) comer</label>
+                <label><input type="radio" name="q5" value="ver"> c) ver</label>
+                <label><input type="radio" name="q5" value="oír"> d) oír</label>
+                <div class="feedback" data-correct-val="ver"></div>
+            </div>
+            <div class="question">6. ¿Cuántas patas tiene un perro?</div>
+            <div class="options">
+                <label><input type="radio" name="q6" value="dos"> a) dos</label>
+                <label><input type="radio" name="q6" value="tres"> b) tres</label>
+                <label><input type="radio" name="q6" value="cuatro"> c) cuatro</label>
+                <label><input type="radio" name="q6" value="cinco"> d) cinco</label>
+                <div class="feedback" data-correct-val="cuatro"></div>
+            </div>
+            <div class="question">7. Lo opuesto de "noche" es ______.</div>
+            <div class="options">
+                <label><input type="radio" name="q7" value="tarde"> a) tarde</label>
+                <label><input type="radio" name="q7" value="mañana"> b) mañana</label>
+                <label><input type="radio" name="q7" value="día"> c) día</label>
+                <label><input type="radio" name="q7" value="siempre"> d) siempre</label>
+                <div class="feedback" data-correct-val="día"></div>
+            </div>
+            <div class="question">8. ¿Qué usas para cocinar?</div>
+            <div class="options">
+                <label><input type="radio" name="q8" value="cuchara"> a) cuchara</label>
+                <label><input type="radio" name="q8" value="tenedor"> b) tenedor</label>
+                <label><input type="radio" name="q8" value="plato"> c) plato</label>
+                <label><input type="radio" name="q8" value="olla"> d) olla</label>
+                <div class="feedback" data-correct-val="olla"></div>
+            </div>
+            <div class="question">9. El mes después de enero es ______.</div>
+            <div class="options">
+                <label><input type="radio" name="q9" value="diciembre"> a) diciembre</label>
+                <label><input type="radio" name="q9" value="marzo"> b) marzo</label>
+                <label><input type="radio" name="q9" value="febrero"> c) febrero</label>
+                <label><input type="radio" name="q9" value="abril"> d) abril</label>
+                <div class="feedback" data-correct-val="febrero"></div>
+            </div>
+            <div class="question">10. ¿Dónde nadas?</div>
+            <div class="options">
+                <label><input type="radio" name="q10" value="montaña"> a) montaña</label>
+                <label><input type="radio" name="q10" value="ciudad"> b) ciudad</label>
+                <label><input type="radio" name="q10" value="biblioteca"> c) biblioteca</label>
+                <label><input type="radio" name="q10" value="piscina"> d) piscina</label>
+                <div class="feedback" data-correct-val="piscina"></div>
+            </div>
+        </div>
+
+        <div class="question-group" data-section="2">
+            <h2>Part 2: Intermediate Vocabulary</h2>
+            <div class="question">11. Necesitas una ______ para coser.</div>
+            <div class="options">
+                <label><input type="radio" name="q11" value="tijeras"> a) tijeras</label>
+                <label><input type="radio" name="q11" value="aguja"> b) aguja</label>
+                <label><input type="radio" name="q11" value="hilo"> c) hilo</label>
+                <label><input type="radio" name="q11" value="dedal"> d) dedal</label>
+                <div class="feedback" data-correct-val="aguja"></div>
+            </div>
+            <div class="question">12. La persona que apaga incendios es el ______.</div>
+            <div class="options">
+                <label><input type="radio" name="q12" value="policía"> a) policía</label>
+                <label><input type="radio" name="q12" value="doctor"> b) doctor</label>
+                <label><input type="radio" name="q12" value="bombero"> c) bombero</label>
+                <label><input type="radio" name="q12" value="maestro"> d) maestro</label>
+                <div class="feedback" data-correct-val="bombero"></div>
+            </div>
+            <div class="question">13. Para viajar en barco, necesitas ir al ______.</div>
+            <div class="options">
+                <label><input type="radio" name="q13" value="autopista"> a) autopista</label>
+                <label><input type="radio" name="q13" value="puerto"> b) puerto</label>
+                <label><input type="radio" name="q13" value="estación de metro"> c) estación de metro</label>
+                <label><input type="radio" name="q13" value="desierto"> d) desierto</label>
+                <div class="feedback" data-correct-val="puerto"></div>
+            </div>
+            <div class="question">14. ¿Qué es un "terremoto"?</div>
+            <div class="options">
+                <label><input type="radio" name="q14" value="una tormenta de nieve"> a) una tormenta de nieve</label>
+                <label><input type="radio" name="q14" value="un movimiento de la tierra"> b) un movimiento de la tierra</label>
+                <label><input type="radio" name="q14" value="una inundación"> c) una inundación</label>
+                <label><input type="radio" name="q14" value="un volcán"> d) un volcán</label>
+                <div class="feedback" data-correct-val="un movimiento de la tierra"></div>
+            </div>
+            <div class="question">15. Lo opuesto de "dulce" es ______.</div>
+            <div class="options">
+                <label><input type="radio" name="q15" value="salado"> a) salado</label>
+                <label><input type="radio" name="q15" value="picante"> b) picante</label>
+                <label><input type="radio" name="q15" value="amargo"> c) amargo</label>
+                <label><input type="radio" name="q15" value="agrio"> d) agrio</label>
+                <div class="feedback" data-correct-val="amargo"></div>
+            </div>
+            <div class="question">16. Un ______ es una extensión grande de agua salada.</div>
+            <div class="options">
+                <label><input type="radio" name="q16" value="lago"> a) lago</label>
+                <label><input type="radio" name="q16" value="río"> b) río</label>
+                <label><input type="radio" name="q16" value="océano"> c) océano</label>
+                <label><input type="radio" name="q16" value="cascada"> d) cascada</label>
+                <div class="feedback" data-correct-val="océano"></div>
+            </div>
+            <div class="question">17. ¿Qué significa "quejarse"?</div>
+            <div class="options">
+                <label><input type="radio" name="q17" value="to praise"> a) to praise</label>
+                <label><input type="radio" name="q17" value="to complain"> b) to complain</label>
+                <label><input type="radio" name="q17" value="to recommend"> c) to recommend</label>
+                <label><input type="radio" name="q17" value="to thank"> d) to thank</label>
+                <div class="feedback" data-correct-val="to complain"></div>
+            </div>
+            <div class="question">18. Un ______ es un edificio donde se guardan coches.</div>
+            <div class="options">
+                <label><input type="radio" name="q18" value="apartamento"> a) apartamento</label>
+                <label><input type="radio" name="q18" value="sótano"> b) sótano</label>
+                <label><input type="radio" name="q18" value="garaje"> c) garaje</label>
+                <label><input type="radio" name="q18" value="ático"> d) ático</label>
+                <div class="feedback" data-correct-val="garaje"></div>
+            </div>
+            <div class="question">19. ¿Cuál de estos es un tipo de fruta cítrica?</div>
+            <div class="options">
+                <label><input type="radio" name="q19" value="plátano"> a) plátano</label>
+                <label><input type="radio" name="q19" value="manzana"> b) manzana</label>
+                <label><input type="radio" name="q19" value="naranja"> c) naranja</label>
+                <label><input type="radio" name="q19" value="uva"> d) uva</label>
+                <div class="feedback" data-correct-val="naranja"></div>
+            </div>
+            <div class="question">20. La ______ es la parte del día después del mediodía.</div>
+            <div class="options">
+                <label><input type="radio" name="q20" value="mañana"> a) mañana</label>
+                <label><input type="radio" name="q20" value="noche"> b) noche</label>
+                <label><input type="radio" name="q20" value="tarde"> c) tarde</label>
+                <label><input type="radio" name="q20" value="madrugada"> d) madrugada</label>
+                <div class="feedback" data-correct-val="tarde"></div>
+            </div>
+        </div>
+
+        <div class="question-group" data-section="3">
+            <h2>Part 3: Intermediate-Advanced Vocabulary</h2>
+            <div class="question">21. ¿Qué significa "superar"?</div>
+            <div class="options">
+                <label><input type="radio" name="q21" value="to be below"> a) to be below</label>
+                <label><input type="radio" name="q21" value="to overcome / to surpass"> b) to overcome / to surpass</label>
+                <label><input type="radio" name="q21" value="to fail"> c) to fail</label>
+                <label><input type="radio" name="q21" value="to avoid"> d) to avoid</label>
+                <div class="feedback" data-correct-val="to overcome / to surpass"></div>
+            </div>
+            <div class="question">22. La ______ es la capacidad de expresar ideas con fluidez.</div>
+            <div class="options">
+                <label><input type="radio" name="q22" value="tartamudez"> a) tartamudez</label>
+                <label><input type="radio" name="q22" value="retórica"> b) retórica</label>
+                <label><input type="radio" name="q22" value="eloqüencia"> c) eloqüencia</label>
+                <label><input type="radio" name="q22" value="dislexia"> d) dislexia</label>
+                <div class="feedback" data-correct-val="eloqüencia"></div>
+            </div>
+            <div class="question">23. Una persona ______ es aquella que es humilde.</div>
+            <div class="options">
+                <label><input type="radio" name="q23" value="arrogante"> a) arrogante</label>
+                <label><input type="radio" name="q23" value="modesta"> b) modesta</label>
+                <label><input type="radio" value="vanidosa"> c) vanidosa</label>
+                <label><input type="radio" name="q23" value="orgullosa"> d) orgullosa</label>
+                <div class="feedback" data-correct-val="modesta"></div>
+            </div>
+            <div class="question">24. ¿Qué es un "dilema"?</div>
+            <div class="options">
+                <label><input type="radio" name="q24" value="una solución fácil"> a) una solución fácil</label>
+                <label><input type="radio" name="q24" value="una situación con dos opciones difíciles"> b) una situación con dos opciones difíciles</label>
+                <label><input type="radio" name="q24" value="un resultado claro"> c) un resultado claro</label>
+                <label><input type="radio" name="q24" value="una verdad universal"> d) una verdad universal</label>
+                <div class="feedback" data-correct-val="una situación con dos opciones difíciles"></div>
+            </div>
+            <div class="question">25. "Mitigar" es sinónimo de ______.</div>
+            <div class="options">
+                <label><input type="radio" name="q25" value="agravar"> a) agravar</label>
+                <label><input type="radio" name="q25" value="empeorar"> b) empeorar</label>
+                <label><input type="radio" name="q25" value="suavizar / aliviar"> c) suavizar / aliviar</label>
+                <label><input type="radio" name="q25" value="aumentar"> d) aumentar</label>
+                <div class="feedback" data-correct-val="suavizar / aliviar"></div>
+            </div>
+            <div class="question">26. La ______ es la cualidad de ser honrado y justo.</div>
+            <div class="options">
+                <label><input type="radio" name="q26" value="corrupción"> a) corrupción</label>
+                <label><input type="radio" name="q26" value="integridad"> b) integridad</label>
+                <label><input type="radio" name="q26" value="engaño"> c) engaño</label>
+                <label><input type="radio" name="q26" value="fraude"> d) fraude</label>
+                <div class="feedback" data-correct-val="integridad"></div>
+            </div>
+            <div class="question">27. ¿Qué significa "dilucidar"?</div>
+            <div class="options">
+                <label><input type="radio" name="q27" value="to confuse"> a) to confuse</label>
+                <label><input type="radio" name="q27" value="to obscure"> b) to obscure</label>
+                <label><input type="radio" name="q27" value="to clarify / to elucidate"> c) to clarify / to elucidate</label>
+                <label><input type="radio" name="q27" value="to hide"> d) to hide</label>
+                <div class="feedback" data-correct-val="to clarify / to elucidate"></div>
+            </div>
+            <div class="question">28. Un ______ es un documento que certifica algo.</div>
+            <div class="options">
+                <label><input type="radio" name="q28" value="cuento"> a) cuento</label>
+                <label><input type="radio" name="q28" value="recibo"> b) recibo</label>
+                <label><input type="radio" name="q28" value="certificado"> c) certificado</label>
+                <label><input type="radio" name="q28" value="periódico"> d) periódico</label>
+                <div class="feedback" data-correct-val="certificado"></div>
+            </div>
+            <div class="question">29. La ______ es una falta de sueño.</div>
+            <div class="options">
+                <label><input type="radio" name="q29" value="insomnio"> a) insomnio</label>
+                <label><input type="radio" name="q29" value="fatiga"> b) fatiga</label>
+                <label><input type="radio" name="q29" value="vigilia"> c) vigilia</label>
+                <label><input type="radio" name="q29" value="somnolencia"> d) somnolencia</label>
+                <div class="feedback" data-correct-val="insomnio"></div>
+            </div>
+            <div class="question">30. "Efímero" describe algo que es ______.</div>
+            <div class="options">
+                <label><input type="radio" name="q30" value="duradero"> a) duradero</label>
+                <label><input type="radio" name="q30" value="permanente"> b) permanente</label>
+                <label><input type="radio" name="q30" value="transitorio / short-lived"> c) transitorio / short-lived</label>
+                <label><input type="radio" name="q30" value="infinito"> d) infinito</label>
+                <div class="feedback" data-correct-val="transitorio / short-lived"></div>
+            </div>
+        </div>
+
+        <div class="question-group" data-section="4">
+            <h2>Part 4: Advanced Vocabulary</h2>
+            <div class="question">31. ¿Qué significa "menoscabar"?</div>
+            <div class="options">
+                <label><input type="radio" name="q31" value="to enhance"> a) to enhance</label>
+                <label><input type="radio" name="q31" value="to diminish / to impair"> b) to diminish / to impair</label>
+                <label><input type="radio" name="q31" value="to support"> c) to support</label>
+                <label><input type="radio" name="q31" value="to strengthen"> d) to strengthen</label>
+                <div class="feedback" data-correct-val="to diminish / to impair"></div>
+            </div>
+            <div class="question">32. La ______ es la capacidad de ser autosuficiente.</div>
+            <div class="options">
+                <label><input type="radio" name="q32" value="dependencia"> a) dependencia</label>
+                <label><input type="radio" name="q32" value="autonomía"> b) autonomía</label>
+                <label><input type="radio" name="q32" value="sumisión"> c) sumisión</label>
+                <label><input type="radio" name="q32" value="subordinación"> d) subordinación</label>
+                <div class="feedback" data-correct-val="autonomía"></div>
+            </div>
+            <div class="question">33. "Palpable" describe algo que es ______.</div>
+            <div class="options">
+                <label><input type="radio" name="q33" value="abstracto"> a) abstracto</label>
+                <label><input type="radio" name="q33" value="intangible"> b) intangible</label>
+                <label><input type="radio" name="q33" value="obvio / tangible"> c) obvio / tangible</label>
+                <label><input type="radio" name="q33" value="imaginario"> d) imaginario</label>
+                <div class="feedback" data-correct-val="obvio / tangible"></div>
+            </div>
+            <div class="question">34. Un ______ es un argumento o razonamiento falso.</div>
+            <div class="options">
+                <label><input type="radio" name="q34" value="axioma"> a) axioma</label>
+                <label><input type="radio" name="q34" value="falacia"> b) falacia</label>
+                <label><input type="radio" name="q34" value="postulado"> c) postulado</label>
+                <label><input type="radio" name="q34" value="principio"> d) principio</label>
+                <div class="feedback" data-correct-val="falacia"></div>
+            </div>
+            <div class="question">35. ¿Qué significa la expresión "a ultranza"?</div>
+            <div class="options">
+                <label><input type="radio" name="q35" value="moderately"> a) moderately</label>
+                <label><input type="radio" name="q35" value="with hesitation"> b) with hesitation</label>
+                <label><input type="radio" name="q35" value="to the utmost / staunchly"> c) to the utmost / staunchly</label>
+                <label><input type="radio" name="q35" value="superficially"> d) superficially</label>
+                <div class="feedback" data-correct-val="to the utmost / staunchly"></div>
+            </div>
+            <div class="question">36. La ______ es la disposición a hacer el bien a los demás.</div>
+            <div class="options">
+                <label><input type="radio" name="q36" value="maldad"> a) maldad</label>
+                <label><input type="radio" name="q36" value="benevolencia"> b) benevolencia</label>
+                <label><input type="radio" name="q36" value="egoísmo"> c) egoísmo</label>
+                <label><input type="radio" name="q36" value="avaricia"> d) avaricia</label>
+                <div class="feedback" data-correct-val="benevolencia"></div>
+            </div>
+            <div class="question">37. "Concomitante" se refiere a algo que ______.</div>
+            <div class="options">
+                <label><input type="radio" name="q37" value="ocurre después"> a) ocurre después</label>
+                <label><input type="radio" name="q37" value="acompaña o sucede al mismo tiempo"> b) acompaña o sucede al mismo tiempo</label>
+                <label><input type="radio" name="q37" value="es independiente"> c) es independiente</label>
+                <label><input type="radio" name="q37" value="es opuesto"> d) es opuesto</label>
+                <div class="feedback" data-correct-val="acompaña o sucede al mismo tiempo"></div>
+            </div>
+            <div class="question">38. ¿Qué significa "apremiar"?</div>
+            <div class="options">
+                <label><input type="radio" name="q38" value="to delay"> a) to delay</label>
+                <label><input type="radio" name="q38" value="to urge / to press"> b) to urge / to press</label>
+                <label><input type="radio" name="q38" value="to ignore"> c) to ignore</label>
+                <label><input type="radio" name="q38" value="to discourage"> d) to discourage</label>
+                <div class="feedback" data-correct-val="to urge / to press"></div>
+            </div>
+            <div class="question">39. La ______ es la cualidad de ser veraz.</div>
+            <div class="options">
+                <label><input type="radio" name="q39" value="mentira"> a) mentira</label>
+                <label><input type="radio" name="q39" value="falsedad"> b) falsedad</label>
+                <label><input type="radio" name="q39" value="veracidad"> c) veracidad</label>
+                <label><input type="radio" name="q39" value="engaño"> d) engaño</label>
+                <div class="feedback" data-correct-val="veracidad"></div>
+            </div>
+            <div class="question">40. Un "repertorio" es un ______.</div>
+            <div class="options">
+                <label><input type="radio" name="q40" value="problema"> a) problema</label>
+                <label><input type="radio" name="q40" value="lista o colección (de obras, habilidades)"> b) lista o colección (de obras, habilidades)</label>
+                <label><input type="radio" name="q40" value="secreto"> c) secreto</label>
+                <label><input type="radio" name="q40" value="desafío"> d) desafío</label>
+                <div class="feedback" data-correct-val="lista o colección (de obras, habilidades)"></div>
+            </div>
+        </div>
+
+        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+    </form>
+
+    <div id="results">
+        <h2>Results</h2>
+        <div id="score-part1" class="score-section"></div>
+        <div id="score-part2" class="score-section"></div>
+        <div id="score-part3" class="score-section"></div>
+        <div id="score-part4" class="score-section"></div>
+        <div id="score-total" class="score-total"></div>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            const form = document.getElementById('quiz-form');
+            const resultsDiv = document.getElementById('results');
+            const feedbackDivs = document.querySelectorAll('.feedback');
+
+            let scores = {
+                1: 0,
+                2: 0,
+                3: 0,
+                4: 0,
+                total: 0
+            };
+            let questionCounts = {
+                1: 0,
+                2: 0,
+                3: 0,
+                4: 0,
+                total: 0
+            };
+
+            // Reset previous feedback and scores
+            feedbackDivs.forEach(div => {
+                div.innerHTML = '';
+                div.classList.remove('correct', 'incorrect');
+            });
+
+            document.querySelectorAll('.options input[type="radio"]').forEach(radio => {
+                radio.closest('label').classList.remove('correct', 'incorrect');
+            });
+
+            feedbackDivs.forEach(feedbackDiv => {
+                const correctAnswer = feedbackDiv.dataset.correctVal.toLowerCase().trim();
+                const parentQuestionDiv = feedbackDiv.closest('.question-group').querySelector(`.question:nth-of-type(${feedbackDiv.closest('.question').innerText.split('.')[0]})`);
+                const questionGroup = feedbackDiv.closest('.question-group');
+                const section = parseInt(questionGroup.dataset.section);
+
+                questionCounts[section]++;
+                questionCounts.total++;
+
+                let isCorrect = false;
+                let userAnswer = '';
+
+                // Handle Multiple Choice Questions
+                const questionNumber = parentQuestionDiv.innerText.split('.')[0].trim();
+                const radioInput = parentQuestionDiv.querySelector(`input[name="q${questionNumber}"]:checked`);
+
+                if (radioInput) {
+                    userAnswer = radioInput.value.toLowerCase().trim();
+                    if (userAnswer === correctAnswer) {
+                        isCorrect = true;
+                    }
+                    radioInput.closest('label').classList.add(isCorrect ? 'correct' : 'incorrect');
+                } else {
+                    console.warn(`No radio input found for question ${questionNumber} or question structure is unexpected.`);
+                }
+
+                if (isCorrect) {
+                    scores[section]++;
+                    scores.total++;
+                    feedbackDiv.classList.add('correct');
+                    feedbackDiv.innerHTML = `Correct! The answer is: <span class="correct">${correctAnswer.toUpperCase()}</span>`;
+                } else {
+                    feedbackDiv.classList.add('incorrect');
+                    feedbackDiv.innerHTML = `Incorrect. The correct answer is: <span class="correct">${correctAnswer.toUpperCase()}</span>`;
+                    if (userAnswer) {
+                        feedbackDiv.innerHTML += ` (Your answer: ${userAnswer.toUpperCase()})`;
+                    }
+                }
+            });
+
+            // Display results
+            document.getElementById('score-part1').innerText = `Part 1 Score: ${scores[1]} / ${questionCounts[1]}`;
+            document.getElementById('score-part2').innerText = `Part 2 Score: ${scores[2]} / ${questionCounts[2]}`;
+            document.getElementById('score-part3').innerText = `Part 3 Score: ${scores[3]} / ${questionCounts[3]}`;
+            document.getElementById('score-part4').innerText = `Part 4 Score: ${scores[4]} / ${questionCounts[4]}`;
+            document.getElementById('score-total').innerText = `Total Score: ${scores.total} / ${questionCounts.total}`;
+            resultsDiv.style.display = 'block';
+
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
