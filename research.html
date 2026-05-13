@@ -105,6 +105,69 @@
         </div>
 
   <div class="my-auto">
+  <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Don't Predict the Future, Create It: Designing Cooperative Resilience in the AI Transition</h3>
+              <div class="subheading mb-3"></div>
+              <p>
+                As artificial intelligence accelerates the automation of both physical and knowledge work, 
+                cooperatives face a distinct challenge: how do you prepare a democratically governed organization 
+                for technological disruption without sacrificing the worker sovereignty that makes it worth preserving? 
+                In collaboration with ASETT and Mondragon University, we conducted research examining how Mondragon's 
+                cooperative network can maintain resilience through the AI transition. Rather than speculating outward 
+                about what AI will become, we propose using the future as a mirror — looking inward at how cooperative 
+                institutions want to change, or not, across a range of possible economic scenarios. 
+                Drawing on Mondragon's history of adapting through past waves of automation, we identified how its 
+                governance structures are likely to respond to near-future AI use cases, and where those structures 
+                may need reinforcement. Through workshops with cooperative members using speculative design scenarios — 
+                from AI-assisted governance to fully automated production — we found that the central challenge is not 
+                the technology itself, but the speed at which it arrives, and whether cooperative institutions can act 
+                proactively before that speed erodes the democratic foundations underneath them.
+	             </p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">
+                Presented at the <a href="https://www.youtube.com/watch?v=kbSIDjNnt4w">#DemocracyAtWork Series: AI and Democracy at Work</a>.
+              </span>
+              <br>
+              <video id="mondragon-video" src="./assets/videos/democracyAtWork-Mondragon_resilience.mp4"
+              data-canonical-src="./assets/videos/democracyAtWork-Mondragon_resilience.mp4"
+              controls="controls" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-height:400px;"></video>
+            </div>
+    </div>
+
+    <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Designing for Proactive Accountability: Lessons on Governing Technology from Detroit’s Food Sovereignty Movement</h3>
+              <div class="subheading mb-3"></div>
+              <p>
+                Technology is often built in ways that leave the communities most affected 
+                by it with little say over how it works or who benefits. 
+                In this work, we engaged with Detroit's food sovereignty movement to study how 
+                communities historically marginalized by technology think about accountability and governance. 
+                Through a series of speculative design workshops, participants drew on their own experiences with 
+                community-owned cooperatives — what they described as "ancestral technologies" — 
+                as models for redistributing power. A consistent theme emerged: new technologies would predictably 
+                harm their communities because profit would be prioritized over justice, and the usual response — 
+                reacting after the damage is done — was not enough. From these insights, we developed the
+                Designing for Proactive Accountability (D4PA) framework, which reconceives governance not as a 
+                last-minute ethical check, but as a foundational material of the design process itself. 
+                D4PA offers concrete principles for HCI researchers and designers who want accountability to be 
+                community-led, formally enforced, and continuously maintained from the very start.
+	             </p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">
+                Published and presented at the <a href="https://dl.acm.org/doi/10.1145/3772318.3790695">Association of Computer Machinery CHI Conference on Human Factors in Computing Systems (CHI 2026)</a>.
+              </span>
+              <br>
+              <video src="./assets/videos/CHI-designing_for_proactive_accountability.mp4"
+              data-canonical-src="./assets/videos/CHI-designing_for_proactive_accountability.mp4"
+              controls="controls" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-height:400px;"></video>
+            </div>
+    </div>
+
+
     <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
               <h3 class="mb-0">Taxonomizing and Measuring Represenational Harms: A Look at Image Tagging</h3>
@@ -134,7 +197,7 @@
               <br>
               <video src="./assets/videos/AAAI-Prerecorded-talk-480.mp4"
               data-canonical-src="./assets/videos/AAAI-Prerecorded-talk-480.mp4"
-              controls="controls" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-height:400px;">
+              controls="controls" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-height:400px;"></video>
             </div>
     </div>
 
@@ -198,6 +261,12 @@
 document.addEventListener("DOMContentLoaded", function (event) {
   navbarToggleSidebar();
   navActivePage();
+  var mondragonVideo = document.getElementById("mondragon-video");
+  if (mondragonVideo) {
+    mondragonVideo.addEventListener("loadedmetadata", function () {
+      mondragonVideo.currentTime = 20;
+    });
+  }
 });
 </script>
 
